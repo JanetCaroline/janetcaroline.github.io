@@ -172,23 +172,6 @@
     items: 1
   });
 
-
-  // send email 
-  document.getElementById("contactForm").addEventListener("submit", function(event) {
-    event.preventDefault();
-    var formData = new FormData(this);
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "send_email.php", true);
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            document.getElementById("contactForm").style.display = "none";
-            document.getElementById("thankYouMessage").style.display = "block";
-        }
-    };
-    xhr.send(formData);
-});
-
-
   // Init AOS
   function aos_init() {
     AOS.init({
